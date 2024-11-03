@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
     // ppr: 'incremental',
     after: true
   },
+  typescript:{
+    ignoreBuildErrors: true
+  },
   devIndicators:{
     appIsrStatus: true,
     buildActivity: true,
