@@ -17,10 +17,10 @@ export default async function Home({ searchParams }: {searchParams : Promise<{qu
     <>
       <section className="pink_container">
         <h1 className="heading">
-          Pitch your startup <br /> Connect with entrepreneurs 
+          Post your blogs <br /> Connect with the world! 
         </h1>
         <p className="sub-heading max-w-3xl">
-          Submit ideas, Vote on Pitches, and Noticed on VIrtual Competitions.
+          Share your thoughts with everyone...
         </p>
         <SearchBar query={query} />
       </section>

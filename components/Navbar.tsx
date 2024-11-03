@@ -13,7 +13,7 @@ const Navbar = async() => {
     <div className='px-5 py-3 bg-white-100 shadow-sm font-work-sans'>
         <nav className='flex justify-between items-center'>
             <Link href="/">
-                <Image src='/logo.png' height={40} width={40} alt='' />
+                <span className='text-26-semibold text-black'>BlogHub</span>
             </Link>
 
             <div className='flex items-center gap-5'>
