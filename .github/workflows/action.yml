@@ -1,9 +1,7 @@
 name: Deploy Next.js to Azure
 
 on:
-    push:
-        branches:
-            - master
+    workflow_run:
 
 jobs:
     build:
