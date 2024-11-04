@@ -21,11 +21,9 @@ jobs:
           lfs: false
       - run: pwd 
         continue-on-error: true
+      - run: ls -la
+        continue-on-error: true
       - name: Build
-        run: npm run build
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
         env:
           AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
           AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID }}
@@ -35,6 +33,10 @@ jobs:
           SANITY_WRITE_TOKEN: ${{ secrets.SANITY_WRITE_TOKEN }}
           NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        run: npm run build
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_MEADOW_04801270F }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
